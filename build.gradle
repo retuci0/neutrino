@@ -1,11 +1,10 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'signing'
 }
 
 group = 'com.github.retucio'
-version = '1.0.2'
+version = '1.0.3'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -25,8 +24,4 @@ publishing {
             from components.java
         }
     }
-}
-
-signing {
-    sign publishing.publications.mavenJava
 }
