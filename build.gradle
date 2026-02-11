@@ -1,0 +1,28 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'com.github.retucio'
+version = '1.0.0'
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+test {
+    failOnNoDiscoveredTests = false
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
